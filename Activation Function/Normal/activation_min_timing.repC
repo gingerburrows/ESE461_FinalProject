@@ -1,0 +1,68 @@
+Warning: Design 'activation' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : activation
+Version: J-2014.09-SP5
+Date   : Thu Nov 29 21:08:44 2018
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: sigmoid/data_out[8] (internal pin)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  sigmoid/data_out[8] (rom)                0.00       0.00 r
+  U15/op (nand2_1)                        52.24      52.24 f
+  U34/op (nand2_1)                       192.91     245.14 r
+  out[8] (out)                             0.00     245.14 r
+  data arrival time                                 245.14
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sigmoid/data_out[8] (internal pin)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  sigmoid/data_out[8] (rom)                0.00       0.00 f
+  U15/op (nand2_1)                        34.88      34.88 r
+  U34/op (nand2_1)                       248.77     283.65 f
+  out[8] (out)                             0.00     283.65 f
+  data arrival time                                 283.65
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: sigmoid/addr[14] (internal pin)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  sigmoid/addr[14] (rom)                   0.00       0.00 r
+  U4/op (or4_1)                           78.26      78.26 r
+  U33/op (nor2_1)                         71.58     149.85 f
+  U34/op (nand2_1)                       187.48     337.32 r
+  out[8] (out)                             0.00     337.32 r
+  data arrival time                                 337.32
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

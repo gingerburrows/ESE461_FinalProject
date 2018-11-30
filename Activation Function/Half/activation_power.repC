@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : activation
+Version: J-2014.09-SP5
+Date   : Thu Nov 29 21:06:49 2018
+****************************************
+
+
+Library(s) Used:
+
+    vtvt_tsmc180 (File: /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs/vtvt_tsmc180.db)
+
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1mW
+
+
+  Cell Internal Power  =   9.0461 mW   (53%)
+  Net Switching Power  =   7.9546 mW   (47%)
+                         ---------
+Total Dynamic Power    =  17.0007 mW  (100%)
+
+Cell Leakage Power     = 177.7392 pW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      9.0461            7.9546        1.7774e-07           17.0007  ( 100.00%)
+--------------------------------------------------------------------------------------------------
+Total              9.0461 mW         7.9546 mW     1.7774e-07 mW        17.0007 mW
+1

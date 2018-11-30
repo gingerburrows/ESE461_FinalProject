@@ -1,0 +1,78 @@
+Warning: Design 'activation' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : activation
+Version: J-2014.09-SP5
+Date   : Thu Nov 29 21:08:44 2018
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: in[11] (input port)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[11] (in)                             35.39      35.39 f
+  U6/op (or4_1)                          238.78     274.17 f
+  U37/op (nor4_1)                        209.82     483.99 r
+  U32/op (nor2_1)                         87.43     571.41 f
+  U33/op (nor2_1)                         92.53     663.94 r
+  U34/op (nand2_1)                       264.43     928.37 f
+  out[8] (out)                             0.00     928.37 f
+  data arrival time                                 928.37
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[5] (input port)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[5] (in)                              11.40      11.40 f
+  U7/op (or4_1)                          233.18     244.58 f
+  U37/op (nor4_1)                        210.23     454.81 r
+  U32/op (nor2_1)                         87.43     542.24 f
+  U33/op (nor2_1)                         92.53     634.77 r
+  U34/op (nand2_1)                       264.43     899.20 f
+  out[8] (out)                             0.00     899.20 f
+  data arrival time                                 899.20
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[0] (input port)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  in[0] (in)                              11.30      11.30 f
+  U7/op (or4_1)                          233.15     244.45 f
+  U37/op (nor4_1)                        210.23     454.69 r
+  U32/op (nor2_1)                         87.43     542.11 f
+  U33/op (nor2_1)                         92.53     634.64 r
+  U34/op (nand2_1)                       264.43     899.07 f
+  out[8] (out)                             0.00     899.07 f
+  data arrival time                                 899.07
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
