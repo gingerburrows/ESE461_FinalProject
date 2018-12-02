@@ -7,7 +7,7 @@ module activation(in,out);
 	
 	rom sigmoid(
 		.addr(decoded_addr),
-		.data_out(rom_out)
+		.data(rom_out)
 	);
 	
 	assign decoded_addr = (in[15] == 1) ? (~in+1) : in; //Negate input is negative
