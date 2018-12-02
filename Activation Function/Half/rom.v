@@ -1,4 +1,4 @@
-module rom(addr,data)
+module rom(addr,data);
 	input [6:0] addr;
 	output reg [15:0] data;
 	
