@@ -1,10 +1,9 @@
-Warning: Design 'activation' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : activation
 Version: J-2014.09-SP5
-Date   : Thu Nov 29 21:08:44 2018
+Date   : Sun Dec  2 20:41:58 2018
 ****************************************
 
 Library(s) Used:
@@ -31,13 +30,12 @@ Total area:                 undefined
 
 Information: This design contains black box (unknown) components. (RPT-8)
 1
-Warning: Design 'activation' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : reference
 Design : activation
 Version: J-2014.09-SP5
-Date   : Thu Nov 29 21:08:44 2018
+Date   : Sun Dec  2 20:41:58 2018
 ****************************************
 
 Attributes:
