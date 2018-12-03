@@ -3,7 +3,7 @@
 Report : area
 Design : activation
 Version: J-2014.09-SP5
-Date   : Thu Nov 29 21:06:49 2018
+Date   : Sun Dec  2 20:41:10 2018
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     vtvt_tsmc180 (File: /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs/vtvt_tsmc180.db)
 
 Number of ports:                           32
-Number of nets:                            42
-Number of cells:                           11
-Number of combinational cells:             11
+Number of nets:                            39
+Number of cells:                            8
+Number of combinational cells:              8
 Number of sequential cells:                 0
 Number of macros/black boxes:               0
-Number of buf/inv:                          3
-Number of references:                       7
+Number of buf/inv:                          0
+Number of references:                       4
 
-Combinational area:                450.740694
-Buf/Inv area:                       83.324701
+Combinational area:                358.230591
+Buf/Inv area:                        0.000000
 Noncombinational area:               0.000000
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                   450.740694
+Total cell area:                   358.230591
 Total area:                 undefined
 1
  
@@ -33,7 +33,7 @@ Total area:                 undefined
 Report : reference
 Design : activation
 Version: J-2014.09-SP5
-Date   : Thu Nov 29 21:06:49 2018
+Date   : Sun Dec  2 20:41:10 2018
 ****************************************
 
 Attributes:
@@ -49,20 +49,14 @@ Attributes:
 
 Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
-inv_1              vtvt_tsmc180
-                                 27.774900       3     83.324701  
-nand2_1            vtvt_tsmc180
-                                 36.741600       2     73.483200  
 nand3_1            vtvt_tsmc180
-                                 45.926998       2     91.853996  
+                                 45.926998       3    137.780994  
 nor2_1             vtvt_tsmc180
-                                 36.741600       1     36.741600  
+                                 36.741600       2     73.483200  
 nor3_1             vtvt_tsmc180
-                                 45.926998       1     45.926998  
+                                 45.926998       2     91.853996  
 nor4_1             vtvt_tsmc180
                                  55.112400       1     55.112400  
-or4_1              vtvt_tsmc180
-                                 64.297798       1     64.297798  
 -----------------------------------------------------------------------------
-Total 7 references                                    450.740694
+Total 4 references                                    358.230591
 1

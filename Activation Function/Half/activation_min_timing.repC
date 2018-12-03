@@ -9,11 +9,45 @@ Report : timing
         -max_paths 20
 Design : activation
 Version: J-2014.09-SP5
-Date   : Thu Nov 29 21:06:49 2018
+Date   : Sun Dec  2 20:41:10 2018
 ****************************************
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
+
+  Startpoint: in[13] (input port)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[13] (in)                             15.08      15.08 r
+  U27/op (nor2_1)                         68.37      83.45 f
+  U34/op (nand3_1)                       201.16     284.61 r
+  out[8] (out)                             0.00     284.61 r
+  data arrival time                                 284.61
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: in[11] (input port)
+  Endpoint: out[8] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in[11] (in)                             14.69      14.69 r
+  U27/op (nor2_1)                         74.22      88.91 f
+  U34/op (nand3_1)                       201.16     290.07 r
+  out[8] (out)                             0.00     290.07 r
+  data arrival time                                 290.07
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
 
   Startpoint: in[15] (input port)
   Endpoint: out[8] (output port)
@@ -23,45 +57,11 @@ Wire Load Model Mode: top
   Point                                    Incr       Path
   -----------------------------------------------------------
   input external delay                     0.00       0.00 r
-  in[15] (in)                             15.15      15.15 r
-  U55/op (inv_1)                          33.54      48.70 f
-  U83/op (nand3_1)                       194.65     243.35 r
-  out[8] (out)                             0.00     243.35 r
-  data arrival time                                 243.35
-  -----------------------------------------------------------
-  (Path is unconstrained)
-
-
-  Startpoint: in[10] (input port)
-  Endpoint: out[8] (output port)
-  Path Group: (none)
-  Path Type: min
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  input external delay                     0.00       0.00 r
-  in[10] (in)                             15.23      15.23 r
-  U82/op (nand3_1)                       100.72     115.95 f
-  U83/op (nand3_1)                       209.67     325.62 r
-  out[8] (out)                             0.00     325.62 r
-  data arrival time                                 325.62
-  -----------------------------------------------------------
-  (Path is unconstrained)
-
-
-  Startpoint: in[9] (input port)
-  Endpoint: out[8] (output port)
-  Path Group: (none)
-  Path Type: min
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  input external delay                     0.00       0.00 r
-  in[9] (in)                              15.61      15.61 r
-  U82/op (nand3_1)                       100.83     116.44 f
-  U83/op (nand3_1)                       209.67     326.11 r
-  out[8] (out)                             0.00     326.11 r
-  data arrival time                                 326.11
+  in[15] (in)                             14.86      14.86 r
+  U28/op (nor3_1)                        105.47     120.33 f
+  U34/op (nand3_1)                       198.29     318.62 r
+  out[8] (out)                             0.00     318.62 r
+  data arrival time                                 318.62
   -----------------------------------------------------------
   (Path is unconstrained)
 

@@ -8,13 +8,13 @@ Report : timing
         -max_paths 20
 Design : activation
 Version: J-2014.09-SP5
-Date   : Thu Nov 29 21:06:49 2018
+Date   : Sun Dec  2 20:41:10 2018
 ****************************************
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
 
-  Startpoint: in[2] (input port)
+  Startpoint: in[3] (input port)
   Endpoint: out[8] (output port)
   Path Group: (none)
   Path Type: max
@@ -22,21 +22,18 @@ Wire Load Model Mode: top
   Point                                    Incr       Path
   -----------------------------------------------------------
   input external delay                     0.00       0.00 f
-  in[2] (in)                              11.76      11.76 f
-  U61/op (nor3_1)                        134.05     145.80 r
-  U65/op (nand2_1)                        76.29     222.09 f
-  U69/op (nor2_1)                         85.87     307.96 r
-  U73/op (nand2_1)                        67.18     375.14 f
-  U81/op (or4_1)                         244.06     619.20 f
-  U82/op (nand3_1)                        60.35     679.55 r
-  U83/op (nand3_1)                       364.63    1044.18 f
-  out[8] (out)                             0.00    1044.18 f
-  data arrival time                                1044.18
+  in[3] (in)                              12.88      12.88 f
+  U30/op (nor4_1)                        202.20     215.08 r
+  U32/op (nand3_1)                       137.39     352.47 f
+  U33/op (nand3_1)                        69.13     421.60 r
+  U34/op (nand3_1)                       366.13     787.73 f
+  out[8] (out)                             0.00     787.73 f
+  data arrival time                                 787.73
   -----------------------------------------------------------
   (Path is unconstrained)
 
 
-  Startpoint: in[1] (input port)
+  Startpoint: in[6] (input port)
   Endpoint: out[8] (output port)
   Path Group: (none)
   Path Type: max
@@ -44,21 +41,18 @@ Wire Load Model Mode: top
   Point                                    Incr       Path
   -----------------------------------------------------------
   input external delay                     0.00       0.00 f
-  in[1] (in)                              11.96      11.96 f
-  U61/op (nor3_1)                        133.01     144.98 r
-  U65/op (nand2_1)                        76.29     221.26 f
-  U69/op (nor2_1)                         85.87     307.13 r
-  U73/op (nand2_1)                        67.18     374.31 f
-  U81/op (or4_1)                         244.06     618.37 f
-  U82/op (nand3_1)                        60.35     678.72 r
-  U83/op (nand3_1)                       364.63    1043.35 f
-  out[8] (out)                             0.00    1043.35 f
-  data arrival time                                1043.35
+  in[6] (in)                              11.97      11.97 f
+  U30/op (nor4_1)                        202.69     214.66 r
+  U32/op (nand3_1)                       137.39     352.05 f
+  U33/op (nand3_1)                        69.13     421.18 r
+  U34/op (nand3_1)                       366.13     787.31 f
+  out[8] (out)                             0.00     787.31 f
+  data arrival time                                 787.31
   -----------------------------------------------------------
   (Path is unconstrained)
 
 
-  Startpoint: in[0] (input port)
+  Startpoint: in[4] (input port)
   Endpoint: out[8] (output port)
   Path Group: (none)
   Path Type: max
@@ -66,16 +60,13 @@ Wire Load Model Mode: top
   Point                                    Incr       Path
   -----------------------------------------------------------
   input external delay                     0.00       0.00 f
-  in[0] (in)                              11.95      11.95 f
-  U61/op (nor3_1)                        132.95     144.90 r
-  U65/op (nand2_1)                        76.29     221.19 f
-  U69/op (nor2_1)                         85.87     307.05 r
-  U73/op (nand2_1)                        67.18     374.24 f
-  U81/op (or4_1)                         244.06     618.29 f
-  U82/op (nand3_1)                        60.35     678.64 r
-  U83/op (nand3_1)                       364.63    1043.28 f
-  out[8] (out)                             0.00    1043.28 f
-  data arrival time                                1043.28
+  in[4] (in)                              11.87      11.87 f
+  U30/op (nor4_1)                        201.91     213.78 r
+  U32/op (nand3_1)                       137.39     351.17 f
+  U33/op (nand3_1)                        69.13     420.30 r
+  U34/op (nand3_1)                       366.13     786.43 f
+  out[8] (out)                             0.00     786.43 f
+  data arrival time                                 786.43
   -----------------------------------------------------------
   (Path is unconstrained)
 
