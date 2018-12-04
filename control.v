@@ -2,9 +2,12 @@ module control
 (
 	input clk,
 	input rst,
+	input [15:0]psum,
+	input [63:0]we,
 	output [3:0]INaddr,
 	output [3:0]OUTaddr,
-	output [3:0]Waddr	
+	output [3:0]Waddr,
+	output [15:0]sum	
 );
 reg [3:0] state;
 reg [3:0] nextstate;
@@ -15,14 +18,6 @@ reg [1:0] round;
 reg [15:0] sum;
 wire [15:0] out;
 
-activation ActF(
-	.in(sum),
-	.out(out)
-);
-
-template SRAM(
-	.clk(clk)
-);
 
 
 initial 
@@ -43,7 +38,10 @@ begin
 	else
 		state=nextstate;
 	
-	sum=INaddr*1000;
+	sum=sum+psum;
+	Waddr=OUTaddr*13+INaddr;
+	we=0;
+	we[OUTaddr % 64]=1;
 
 	case(state)
 		0:begin
@@ -72,7 +70,7 @@ begin
 	case(state)
 		0:begin
 			if(round<2 && OUTaddr>0) begin
-				round=round+1;
+				round=round+2;
 				OUTaddr=0;
 				INaddr=0;
 			end			
