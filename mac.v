@@ -133,90 +133,150 @@ module mac
 	output reg [15:0] result
 );
 
-	reg [31 : 0] psums[63 : 0];
 	reg [31 : 0] result_temp;
 	reg i;
 
-	//function [15:0] trunc_32_to_16(input [31:0] val32);
-  		//trunc_32_to_16 = val32[23:8];
-	//endfunction
+	wire [15 : 0] data[63 : 0];
+	wire [15 : 0] weights[63 : 0];
+
+	assign data[0] = data1;
+	assign data[1] = data2;
+	assign data[2] = data3;
+	assign data[3] = data4;
+	assign data[4] = data5;
+	assign data[5] = data6;
+	assign data[6] = data7;
+	assign data[7] = data8;
+	assign data[8] = data9;
+	assign data[9] = data10;
+	assign data[10] = data11;
+	assign data[11] = data12;
+	assign data[12] = data13;
+	assign data[13] = data14;
+	assign data[14] = data15;
+	assign data[15] = data16;
+	assign data[16] = data17;
+	assign data[17] = data18;
+	assign data[18] = data19;
+	assign data[19] = data20;
+	assign data[20] = data21;
+	assign data[21] = data22;
+	assign data[22] = data23;
+	assign data[23] = data24;
+	assign data[24] = data25;
+	assign data[25] = data26;
+	assign data[26] = data27;
+	assign data[27] = data28;
+	assign data[28] = data29;
+	assign data[29] = data30;
+	assign data[30] = data31;
+	assign data[31] = data32;
+	assign data[32] = data33;
+	assign data[33] = data34;
+	assign data[34] = data35;
+	assign data[35] = data36;
+	assign data[36] = data37;
+	assign data[37] = data38;
+	assign data[38] = data39;
+	assign data[39] = data40;
+	assign data[40] = data41;
+	assign data[41] = data42;
+	assign data[42] = data43;
+	assign data[43] = data44;
+	assign data[44] = data45;
+	assign data[45] = data46;
+	assign data[46] = data47;
+	assign data[47] = data48;
+	assign data[48] = data49;
+	assign data[49] = data50;
+	assign data[50] = data51;
+	assign data[51] = data52;
+	assign data[52] = data53;
+	assign data[53] = data54;
+	assign data[54] = data55;
+	assign data[55] = data56;
+	assign data[56] = data57;
+	assign data[57] = data58;
+	assign data[58] = data59;
+	assign data[59] = data60;
+	assign data[60] = data61;
+	assign data[61] = data62;
+	assign data[62] = data63;
+	assign data[63] = data64;
+	
+	assign weights[0] =  weight1;
+	assign weights[1] =  weight2;
+	assign weights[2] =  weight3;
+	assign weights[3] =  weight4;
+	assign weights[4] =  weight5;
+	assign weights[5] =  weight6;
+	assign weights[6] =  weight7;
+	assign weights[7] =  weight8;
+	assign weights[8] =  weight9;
+	assign weights[9] =  weight10;
+	assign weights[10] =  weight11;
+	assign weights[11] =  weight12;
+	assign weights[12] =  weight13;
+	assign weights[13] =  weight14;
+	assign weights[14] =  weight15;
+	assign weights[15] =  weight16;
+	assign weights[16] =  weight17;
+	assign weights[17] =  weight18;
+	assign weights[18] =  weight19;
+	assign weights[19] =  weight20;
+	assign weights[20] =  weight21;
+	assign weights[21] =  weight22;
+	assign weights[22] =  weight23;
+	assign weights[23] =  weight24;
+	assign weights[24] =  weight25;
+	assign weights[25] =  weight26;
+	assign weights[26] =  weight27;
+	assign weights[27] =  weight28;
+	assign weights[28] =  weight29;
+	assign weights[29] =  weight30;
+	assign weights[30] =  weight31;
+	assign weights[31] =  weight32;
+	assign weights[32] =  weight33;
+	assign weights[33] =  weight34;
+	assign weights[34] =  weight35;
+	assign weights[35] =  weight36;
+	assign weights[36] =  weight37;
+	assign weights[37] =  weight38;
+	assign weights[38] =  weight39;
+	assign weights[39] =  weight40;
+	assign weights[40] =  weight41;
+	assign weights[41] =  weight42;
+	assign weights[42] =  weight43;
+	assign weights[43] =  weight44;
+	assign weights[44] =  weight45;
+	assign weights[45] =  weight46;
+	assign weights[46] =  weight47;
+	assign weights[47] =  weight48;
+	assign weights[48] =  weight49;
+	assign weights[49] =  weight50;
+	assign weights[50] =  weight51;
+	assign weights[51] =  weight52;
+	assign weights[52] =  weight53;
+	assign weights[53] =  weight54;
+	assign weights[54] =  weight55;
+	assign weights[55] =  weight56;
+	assign weights[56] =  weight57;
+	assign weights[57] =  weight58;
+	assign weights[58] =  weight59;
+	assign weights[59] =  weight60;
+	assign weights[60] =  weight61;
+	assign weights[61] =  weight62;
+	assign weights[62] =  weight63;
+	assign weights[63] =  weight64;
 
 	always@(posedge clk or posedge reset) begin
 		if (reset) begin
-			for(i = 0; i < 64; i = i + 1) begin
-				psums[i] <= 0;
-			end
 			result_temp <= 0;
 			result <= 0;
 		end	
 		else begin
-			psums[0] <= data1 * weight1;
-			psums[1] <= data2 * weight2;
-			psums[2] <= data3 * weight3;
-			psums[3] <= data4 * weight4;
-			psums[4] <= data5 * weight5;
-			psums[5] <= data6 * weight6;
-			psums[6] <= data7 * weight7;
-			psums[7] <= data8 * weight8;
-			psums[8] <= data9 * weight9;
-			psums[9] <= data10 * weight10;
-			psums[10] <= data11 * weight11;
-			psums[11] <= data12 * weight12;
-			psums[12] <= data13 * weight13;
-			psums[13] <= data14 * weight14;
-			psums[14] <= data15 * weight15;
-			psums[15] <= data16 * weight16;
-			psums[16] <= data17 * weight17;
-			psums[17] <= data18 * weight18;
-			psums[18] <= data19 * weight19;
-			psums[19] <= data20 * weight20;
-			psums[20] <= data21 * weight21;
-			psums[21] <= data22 * weight22;
-			psums[22] <= data23 * weight23;
-			psums[23] <= data24 * weight24;
-			psums[24] <= data25 * weight25;
-			psums[25] <= data26 * weight26;
-			psums[26] <= data27 * weight27;
-			psums[27] <= data28 * weight28;
-			psums[28] <= data29 * weight29;
-			psums[29] <= data30 * weight30;
-			psums[30] <= data31 * weight31;
-			psums[31] <= data32 * weight32;
-			psums[32] <= data33 * weight33;
-			psums[33] <= data34 * weight34;
-			psums[34] <= data35 * weight35;
-			psums[35] <= data36 * weight36;
-			psums[36] <= data37 * weight37;
-			psums[37] <= data38 * weight38;
-			psums[38] <= data39 * weight39;
-			psums[39] <= data40 * weight40;
-			psums[40] <= data41 * weight41;
-			psums[41] <= data42 * weight42;
-			psums[42] <= data43 * weight43;
-			psums[43] <= data44 * weight44;
-			psums[44] <= data45 * weight45;
-			psums[45] <= data46 * weight46;
-			psums[46] <= data47 * weight47;
-			psums[47] <= data48 * weight48;
-			psums[48] <= data49 * weight49;
-			psums[49] <= data50 * weight50;
-			psums[50] <= data51 * weight51;
-			psums[51] <= data52 * weight52;
-			psums[52] <= data53 * weight53;
-			psums[53] <= data54 * weight54;
-			psums[54] <= data55 * weight55;
-			psums[55] <= data56 * weight56;
-			psums[56] <= data57 * weight57;
-			psums[57] <= data58 * weight58;
-			psums[58] <= data59 * weight59;
-			psums[59] <= data60 * weight60;
-			psums[60] <= data61 * weight61;
-			psums[61] <= data62 * weight62;
-			psums[62] <= data63 * weight63;
-			psums[63] <= data64 * weight64;
-		
 			for(i = 0; i < 64; i = i + 1) begin
-				result_temp <=  result_temp + psums[i];
+				result_temp <=  result_temp + data[i]*weights[i];
 			end
 
 			result <= result_temp[23:8];
@@ -224,6 +284,7 @@ module mac
 	end
 
 endmodule
+
 
 
 
