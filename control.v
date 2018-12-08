@@ -14,7 +14,7 @@ reg [3:0] nextstate;
 reg [3:0] INaddr;
 reg [3:0] OUTaddr;
 reg [3:0] Waddr;
-reg [1:0] round;
+reg [4:0] round;
 reg [15:0] sum;
 wire [15:0] out;
 
@@ -39,26 +39,24 @@ begin
 		state=nextstate;
 	
 	sum=sum+psum;
-	Waddr=OUTaddr*13+INaddr;
-	we=0;
-	we[OUTaddr % 64]=1;
-
+	
+	if (round % 2==0)
+	begin
 	case(state)
 		0:begin
-			if(round<2)			
+			if(round<20)			
 				nextstate=1;
 			else
 				nextstate=0;
 		end
 		1:begin
-			if ((round==0 && INaddr<12)||(round==1 && INaddr<4))
-				nextstate=1;
+			if (INaddr<12)									nextstate=1;
 			else 
 				nextstate=2;
 	
 		end
 		2:begin
-			if ((round==0 && OUTaddr<5)||(round==1 && OUTaddr<2))
+			if (OUTaddr<200)
 				nextstate=1;
 			else 
 				nextstate=0;
@@ -66,11 +64,39 @@ begin
 		end
 
 	endcase
+	end
 
+	else begin
 	case(state)
 		0:begin
-			if(round<2 && OUTaddr>0) begin
-				round=round+2;
+			if(round<20)			
+				nextstate=1;
+			else
+				nextstate=0;
+		end
+		1:begin
+			if (OUTaddr<4))
+				nextstate=1;
+			else 
+				nextstate=2;
+	
+		end
+		2:begin
+			if (INaddr<10))
+				nextstate=1;
+			else 
+				nextstate=0;
+
+		end
+
+	endcase
+	end
+
+	if(round %2==0)begin
+	case(state)
+		0:begin
+			if(round<20 && OUTaddr>0) begin
+				round=round+1;
 				OUTaddr=0;
 				INaddr=0;
 			end			
@@ -83,6 +109,38 @@ begin
 			OUTaddr=OUTaddr+1;		
 		end
 
-	endcase	
+	endcase
+	end
+	else begin
+	case(state)
+		0:begin
+			if(round<20 && INaddr>0) begin
+				round=round+1;
+				OUTaddr=0;
+				INaddr=0;
+			end			
+		end
+		1:begin
+			OUTaddr=OUTaddr+1;
+		end
+		2:begin
+			OUTaddr=0;
+			INaddr=INaddr+1;		
+		end
+
+	endcase
+	end
+
+	we=0;
+	If(round%2==0)begin
+		we[OUTaddr % 64]=1;
+		Waddr=OUTaddr*13+INaddr;
+	end
+	else
+	begin
+		we[INaddr % 64]=1;
+		Waddr=INaddr*5+OUTaddr;
+	end
+
 end
 endmodule
