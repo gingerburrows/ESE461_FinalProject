@@ -33,9 +33,9 @@ for i in range(64):
 		print('\tsram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram{}('.format(str(i)))
 	
 	print('\t\t.clk(clk),')
-	print('\t\t.we(0),')
+	print("\t\t.we(1'b0),")
 	print('\t\t.addr(wAddrQ),')
-	print('\t\t.data(0),')
+	print("\t\t.data(16'b0),")
 	print('\t\t.q(weight0[{}]));\n'.format(str(i)))
 
 #Weight SRAM 2 instantiation
@@ -46,9 +46,9 @@ for i in range(64):
 		print('\tsram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram{}('.format(str(i)))
 	
 	print('\t\t.clk(clk),')
-	print('\t\t.we(0),')
+	print("\t\t.we(1'b0),")
 	print('\t\t.addr(wAddrQ[5:0]),')
-	print('\t\t.data(0),')
+	print("\t\t.data(16'b0),")
 	print('\t\t.q(weight1[{}]));\n'.format(str(i)))
 	
 	
