@@ -3,19 +3,21 @@ module control
 	input clk,
 	input rst,
 	input [15:0]psum,
-	input [63:0]we,
+	output [63:0]we,
 	output [3:0]INaddr,
-	output [3:0]OUTaddr,
-	output [3:0]Waddr,
-	output [15:0]sum	
+	output [1:0]OUTaddr,
+	output [11:0]Waddr,
+	output [15:0]sum,
+	output [4:0]round	
 );
 reg [3:0] state;
 reg [3:0] nextstate;
 reg [3:0] INaddr;
-reg [3:0] OUTaddr;
-reg [3:0] Waddr;
+reg [1:0] OUTaddr;
+reg [11:0] Waddr;
 reg [4:0] round;
 reg [15:0] sum;
+reg [63:0] we;
 wire [15:0] out;
 
 
@@ -44,7 +46,7 @@ begin
 	begin
 	case(state)
 		0:begin
-			if(round<20)			
+			if(round<2)			
 				nextstate=1;
 			else
 				nextstate=0;
@@ -56,7 +58,7 @@ begin
 	
 		end
 		2:begin
-			if (OUTaddr<200)
+			if (OUTaddr<5)
 				nextstate=1;
 			else 
 				nextstate=0;
@@ -69,20 +71,20 @@ begin
 	else begin
 	case(state)
 		0:begin
-			if(round<20)			
+			if(round<2)			
 				nextstate=1;
 			else
 				nextstate=0;
 		end
 		1:begin
-			if (OUTaddr<4))
+			if (OUTaddr<4)
 				nextstate=1;
 			else 
 				nextstate=2;
 	
 		end
 		2:begin
-			if (INaddr<10))
+			if (INaddr<2)
 				nextstate=1;
 			else 
 				nextstate=0;
@@ -95,7 +97,7 @@ begin
 	if(round %2==0)begin
 	case(state)
 		0:begin
-			if(round<20 && OUTaddr>0) begin
+			if(round<2 && OUTaddr>0) begin
 				round=round+1;
 				OUTaddr=0;
 				INaddr=0;
@@ -114,7 +116,7 @@ begin
 	else begin
 	case(state)
 		0:begin
-			if(round<20 && INaddr>0) begin
+			if(round<2 && INaddr>0) begin
 				round=round+1;
 				OUTaddr=0;
 				INaddr=0;
@@ -132,7 +134,7 @@ begin
 	end
 
 	we=0;
-	If(round%2==0)begin
+	if(round%2==0) begin
 		we[OUTaddr % 64]=1;
 		Waddr=OUTaddr*13+INaddr;
 	end
