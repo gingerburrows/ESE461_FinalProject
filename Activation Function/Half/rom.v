@@ -1,5 +1,5 @@
 module rom(addr,data);
-	input [6:0] addr;
+	input [15:0] addr;
 	output reg [15:0] data;
 	
 	//Look-up Table of Sigmoid (X >=0)
