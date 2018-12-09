@@ -18,7 +18,7 @@ module top_tb();
 	
 	
 	reg [15:0] image_in [0:783];
-	reg [15:0] weight_1 [0:15799];
+	reg [15:0] weight_1 [0:156799];
 	reg [15:0] weight_2 [0:1999];
 
 
