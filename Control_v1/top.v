@@ -14,7 +14,7 @@ module Top(
 
 	//Signals shared between input and intermediate
 	reg [15:0] wrData;
-	wire [63:0] we [0:1]; // [0]-Intermediate, [1]-Input
+	reg [63:0] we [0:1]; // [0]-Intermediate, [1]-Input
 	
 
 	//Weight SRAM signals
@@ -28,7 +28,7 @@ module Top(
 
 	wire [15:0] psum;
 	wire [15:0] ActFout;
-	wire round; //FIXME
+	wire [1:0]round; //FIXME
 	wire [63:0] we_ctrl;
 
 
@@ -48,8 +48,6 @@ module Top(
 		.round(round)
 	);
 
-	assign we[0] = we_ctrl & (64'hFFFFFFFF * (!(round %2))) ; //FIXME
-	assign we[1] = we_ctrl & (64'hFFFFFFFF * (round %2)) ; //FIXME
 
 	reg [15:0] data1;
 	reg [15:0] data2;
@@ -319,8 +317,16 @@ module Top(
 	always@(*)
 	begin
 		wrData=psum;
+		if(round==0) begin
+			we[0] = we_ctrl;
+			we[1]= 64'b0;
+		end
+		else if(round==1) begin
+			we[1] = we_ctrl;
+			we[0]= 64'b0;
+		end
 
-		if (round %2==0) begin 
+		if (round ==0) begin 
 			data1<=inoutDataQ[0]; 
 			data2<=inoutDataQ[1];
 			data3<=inoutDataQ[2];
@@ -460,63 +466,63 @@ module Top(
 			data6<=midDataQ[5];
 			data7<=midDataQ[6];
 			data8<=midDataQ[7];
-			data9<=midDataQ[8];
-			data10<=midDataQ[9];
-			data11<=midDataQ[10];
-			data12<=midDataQ[11];
-			data13<=midDataQ[12];
-			data14<=midDataQ[13];
-			data15<=midDataQ[14];
-			data16<=midDataQ[15];
-			data17<=midDataQ[16];
-			data18<=midDataQ[17];
-			data19<=midDataQ[18];
-			data20<=midDataQ[19];
-			data21<=midDataQ[20];
-			data22<=midDataQ[21];
-			data23<=midDataQ[22];
-			data24<=midDataQ[23];
-			data25<=midDataQ[24];
-			data26<=midDataQ[25];
-			data27<=midDataQ[26];
-			data28<=midDataQ[27];
-			data29<=midDataQ[28];
-			data30<=midDataQ[29];
-			data31<=midDataQ[30];
-			data32<=midDataQ[31];
-			data33<=midDataQ[32];
-			data34<=midDataQ[33];
-			data35<=midDataQ[34];
-			data36<=midDataQ[35];
-			data37<=midDataQ[36];
-			data38<=midDataQ[37];
-			data39<=midDataQ[38];
-			data40<=midDataQ[39];
-			data41<=midDataQ[40];
-			data42<=midDataQ[41];
-			data43<=midDataQ[42];
-			data44<=midDataQ[43];
-			data45<=midDataQ[44];
-			data46<=midDataQ[45];
-			data47<=midDataQ[46];
-			data48<=midDataQ[47];
-			data49<=midDataQ[48];
-			data50<=midDataQ[49];
-			data51<=midDataQ[50];
-			data52<=midDataQ[51];
-			data53<=midDataQ[52];
-			data54<=midDataQ[53];
-			data55<=midDataQ[54];
-			data56<=midDataQ[55];
-			data57<=midDataQ[56];
-			data58<=midDataQ[57];
-			data59<=midDataQ[58];
-			data60<=midDataQ[59];
-			data61<=midDataQ[60];
-			data62<=midDataQ[61];
-			data63<=midDataQ[62];
-			data64<=midDataQ[63];
-			weight01<=weight1[0];
+			data9<=midDataQ[8] &(16'hFFFF *(midAddrQ<3));
+			data10<=midDataQ[9] &(16'hFFFF *(midAddrQ<3));
+			data11<=midDataQ[10] &(16'hFFFF *(midAddrQ<3));
+			data12<=midDataQ[11] &(16'hFFFF *(midAddrQ<3));
+			data13<=midDataQ[12] &(16'hFFFF *(midAddrQ<3));
+			data14<=midDataQ[13] &(16'hFFFF *(midAddrQ<3));
+			data15<=midDataQ[14] &(16'hFFFF *(midAddrQ<3));
+			data16<=midDataQ[15] &(16'hFFFF *(midAddrQ<3));
+			data17<=midDataQ[16] &(16'hFFFF *(midAddrQ<3));
+			data18<=midDataQ[17] &(16'hFFFF *(midAddrQ<3));
+			data19<=midDataQ[18] &(16'hFFFF *(midAddrQ<3));
+			data20<=midDataQ[19] &(16'hFFFF *(midAddrQ<3));
+			data21<=midDataQ[20] &(16'hFFFF *(midAddrQ<3));
+			data22<=midDataQ[21] &(16'hFFFF *(midAddrQ<3));
+			data23<=midDataQ[22] &(16'hFFFF *(midAddrQ<3));
+			data24<=midDataQ[23] &(16'hFFFF *(midAddrQ<3));
+			data25<=midDataQ[24] &(16'hFFFF *(midAddrQ<3));
+			data26<=midDataQ[25] &(16'hFFFF *(midAddrQ<3));
+			data27<=midDataQ[26] &(16'hFFFF *(midAddrQ<3));
+			data28<=midDataQ[27] &(16'hFFFF *(midAddrQ<3));
+			data29<=midDataQ[28] &(16'hFFFF *(midAddrQ<3));
+			data30<=midDataQ[29] &(16'hFFFF *(midAddrQ<3));
+			data31<=midDataQ[30] &(16'hFFFF *(midAddrQ<3));
+			data32<=midDataQ[31] &(16'hFFFF *(midAddrQ<3));
+			data33<=midDataQ[32] &(16'hFFFF *(midAddrQ<3));
+			data34<=midDataQ[33] &(16'hFFFF *(midAddrQ<3));
+			data35<=midDataQ[34] &(16'hFFFF *(midAddrQ<3));
+			data36<=midDataQ[35] &(16'hFFFF *(midAddrQ<3));
+			data37<=midDataQ[36] &(16'hFFFF *(midAddrQ<3));
+			data38<=midDataQ[37] &(16'hFFFF *(midAddrQ<3));
+			data39<=midDataQ[38] &(16'hFFFF *(midAddrQ<3));
+			data40<=midDataQ[39] &(16'hFFFF *(midAddrQ<3));
+			data41<=midDataQ[40] &(16'hFFFF *(midAddrQ<3));
+			data42<=midDataQ[41] &(16'hFFFF *(midAddrQ<3));
+			data43<=midDataQ[42] &(16'hFFFF *(midAddrQ<3));
+			data44<=midDataQ[43] &(16'hFFFF *(midAddrQ<3));
+			data45<=midDataQ[44] &(16'hFFFF *(midAddrQ<3));
+			data46<=midDataQ[45] &(16'hFFFF *(midAddrQ<3));
+			data47<=midDataQ[46] &(16'hFFFF *(midAddrQ<3));
+			data48<=midDataQ[47] &(16'hFFFF *(midAddrQ<3));
+			data49<=midDataQ[48] &(16'hFFFF *(midAddrQ<3));
+			data50<=midDataQ[49] &(16'hFFFF *(midAddrQ<3));
+			data51<=midDataQ[50] &(16'hFFFF *(midAddrQ<3));
+			data52<=midDataQ[51] &(16'hFFFF *(midAddrQ<3));
+			data53<=midDataQ[52] &(16'hFFFF *(midAddrQ<3));
+			data54<=midDataQ[53] &(16'hFFFF *(midAddrQ<3));
+			data55<=midDataQ[54] &(16'hFFFF *(midAddrQ<3));
+			data56<=midDataQ[55] &(16'hFFFF *(midAddrQ<3));
+			data57<=midDataQ[56] &(16'hFFFF *(midAddrQ<3));
+			data58<=midDataQ[57] &(16'hFFFF *(midAddrQ<3));
+			data59<=midDataQ[58] &(16'hFFFF *(midAddrQ<3));
+			data60<=midDataQ[59] &(16'hFFFF *(midAddrQ<3));
+			data61<=midDataQ[60] &(16'hFFFF *(midAddrQ<3));
+			data62<=midDataQ[61] &(16'hFFFF *(midAddrQ<3));
+			data63<=midDataQ[62] &(16'hFFFF *(midAddrQ<3));
+			data64<=midDataQ[63] &(16'hFFFF *(midAddrQ<3));
+			weight01<=weight1[0] &(16'hFFFF *(midAddrQ<3));
 			weight2<=weight1[1];
 			weight3<=weight1[2];
 			weight4<=weight1[3];
@@ -1599,336 +1605,336 @@ end
 		.data(16'b0),
 		.q(weight0[15]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram16(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram16(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[16]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram17(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram17(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[17]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram18(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram18(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[18]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram19(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram19(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[19]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram20(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram20(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[20]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram21(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram21(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[21]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram22(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram22(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[22]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram23(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram23(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[23]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram24(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram24(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[24]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram25(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram25(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[25]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram26(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram26(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[26]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram27(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram27(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[27]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram28(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram28(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[28]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram29(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram29(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[29]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram30(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram30(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[30]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram31(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram31(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[31]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram32(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram32(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[32]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram33(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram33(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[33]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram34(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram34(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[34]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram35(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram35(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[35]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram36(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram36(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[36]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram37(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram37(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[37]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram38(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram38(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[38]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram39(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram39(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[39]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram40(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram40(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[40]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram41(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram41(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[41]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram42(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram42(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[42]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram43(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram43(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[43]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram44(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram44(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[44]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram45(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram45(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[45]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram46(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram46(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[46]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram47(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram47(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[47]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram48(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram48(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[48]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram49(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram49(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[49]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram50(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram50(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[50]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram51(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram51(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[51]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram52(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram52(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[52]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram53(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram53(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[53]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram54(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram54(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[54]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram55(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram55(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[55]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram56(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram56(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[56]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram57(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram57(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[57]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram58(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram58(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[58]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram59(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram59(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[59]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram60(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram60(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[60]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram61(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram61(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[61]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram62(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram62(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
 		.data(16'b0),
 		.q(weight0[62]));
 
-	sram #(.ADDR_WIDTH(12),.SIZE(2400)) weight1_sram63(
+	sram #(.ADDR_WIDTH(12),.SIZE(2600)) weight1_sram63(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ),
@@ -1993,392 +1999,392 @@ end
 		.data(16'b0),
 		.q(weight1[7]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram8(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram8(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[8]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram9(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram9(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[9]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram10(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram10(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[10]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram11(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram11(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[11]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram12(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram12(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[12]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram13(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram13(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[13]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram14(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram14(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[14]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram15(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram15(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[15]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram16(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram16(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[16]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram17(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram17(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[17]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram18(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram18(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[18]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram19(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram19(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[19]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram20(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram20(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[20]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram21(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram21(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[21]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram22(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram22(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[22]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram23(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram23(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[23]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram24(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram24(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[24]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram25(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram25(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[25]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram26(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram26(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[26]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram27(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram27(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[27]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram28(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram28(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[28]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram29(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram29(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[29]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram30(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram30(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[30]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram31(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram31(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[31]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram32(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram32(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[32]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram33(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram33(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[33]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram34(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram34(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[34]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram35(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram35(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[35]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram36(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram36(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[36]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram37(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram37(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[37]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram38(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram38(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[38]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram39(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram39(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[39]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram40(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram40(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[40]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram41(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram41(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[41]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram42(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram42(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[42]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram43(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram43(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[43]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram44(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram44(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[44]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram45(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram45(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[45]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram46(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram46(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[46]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram47(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram47(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[47]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram48(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram48(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[48]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram49(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram49(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[49]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram50(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram50(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[50]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram51(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram51(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[51]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram52(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram52(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[52]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram53(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram53(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[53]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram54(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram54(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[54]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram55(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram55(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[55]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram56(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram56(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[56]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram57(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram57(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[57]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram58(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram58(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[58]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram59(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram59(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[59]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram60(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram60(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[60]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram61(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram61(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[61]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram62(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram62(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),
 		.data(16'b0),
 		.q(weight1[62]));
 
-	sram #(.ADDR_WIDTH(6),.SIZE(30)) weight2_sram63(
+	sram #(.ADDR_WIDTH(6),.SIZE(40)) weight2_sram63(
 		.clk(clk),
 		.we(1'b0),
 		.addr(wAddrQ[5:0]),

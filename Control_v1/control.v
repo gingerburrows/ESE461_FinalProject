@@ -21,7 +21,7 @@ reg [8:0] OUTcounter;
 reg [8:0] INcounter;
 
 reg [11:0] Waddr;
-reg round;
+reg [1:0] round;
 
 reg [63:0] we;
 
@@ -44,7 +44,10 @@ begin
 		round=0;
 	end
 	else
-		state=nextstate;
+		if(round==2)
+			state=0;
+		else
+			state=nextstate;
 	
 
 	
@@ -73,9 +76,13 @@ begin
 
 		end
 		4:begin
-			if (OUTcounter<5)
-				nextstate=1;
+			if (OUTaddr==3 && OUTcounter==7)
+				nextstate=5;
 			else 
+				nextstate=1;
+
+		end
+		5:begin
 				nextstate=0;
 
 		end
@@ -92,7 +99,7 @@ begin
 				nextstate=0;
 		end
 		1:begin
-			if (OUTaddr<3)
+			if (OUTaddr<2)
 				nextstate=1;
 			else 
 				nextstate=2;
@@ -107,10 +114,10 @@ begin
 
 		end
 		4:begin
-			if (INcounter<5)
-				nextstate=1;
-			else 
+			if (INcounter==9)
 				nextstate=0;
+			else 
+				nextstate=1;
 
 		end
 
@@ -120,11 +127,6 @@ begin
 	if(round ==0)begin
 	case(state)
 		0:begin
-			if(round<2 && rst==0) begin
-				round=round+1;
-				OUTcounter=0;
-				INaddr=0;
-			end
 			we=0;		
 			MACreset=1'b1;	
 	
@@ -144,20 +146,25 @@ begin
 			we=0;			
 			OUTcounter=OUTcounter+1;
 			MACreset=1'b1;
-			INaddr=0;
+			INaddr=4'b0000;
 			if(OUTcounter==64)begin
 				OUTcounter=0;
 				OUTaddr=OUTaddr+1;
 			end		
 		end
-
-
+		5:begin
+			we<=0;
+			OUTcounter<=0;
+			OUTaddr<=0;
+			INaddr<=0;
+			round<=round+1;
+		end
 	endcase
 	end
 	else begin
 	case(state)
 		0:begin
-			if(round<2 && INaddr>0) begin
+			if(INcounter>0 && round<2) begin
 				round=round+1;
 				OUTaddr=0;
 				INaddr=0;
@@ -180,7 +187,7 @@ begin
 			we=0;			
 			INcounter=INcounter+1;	
 			MACreset=1'b1;
-			OUTaddr=0;
+			OUTaddr=2'b00;
 			if(INcounter==64)begin
 				INcounter=0;
 				INaddr=INaddr+1;

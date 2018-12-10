@@ -130,14 +130,14 @@ module mac
 	input [15:0] weight62,
 	input [15:0] weight63,
 	input [15:0] weight64,
-	output reg [15:0] result
+	output reg signed [15:0] result
 );
 
-	reg [31 : 0] result_temp;
+	reg signed [31 : 0] result_temp;
 	reg [7:0] i;
 
-	wire [15 : 0] data[63 : 0];
-	wire [15 : 0] weights[63 : 0];
+	wire signed [15 : 0]  data[63 : 0];
+	wire signed [15 : 0] weights[63 : 0];
 
 	assign data[0] = data1;
 	assign data[1] = data2;
@@ -276,9 +276,7 @@ module mac
 			i=0;
 		end	
 		else begin
-			for(i = 0; i < 64; i = i + 1) begin
-				result_temp <=  result_temp + data[i]*weights[i];
-			end
+			result_temp <=  result_temp + data[0]*weights[0]+data[1]*weights[1]+data[2]*weights[2]+data[3]*weights[3]+data[4]*weights[4]+data[5]*weights[5]+data[6]*weights[6]+data[7]*weights[7]+data[8]*weights[8]+data[9]*weights[9]+data[10]*weights[10]+data[11]*weights[11]+data[12]*weights[12]+data[13]*weights[13]+data[14]*weights[14]+data[15]*weights[15]+data[16]*weights[16]+data[17]*weights[17]+data[18]*weights[18]+data[19]*weights[19]+data[20]*weights[20]+data[21]*weights[21]+data[22]*weights[22]+data[23]*weights[23]+data[24]*weights[24]+data[25]*weights[25]+data[26]*weights[26]+data[27]*weights[27]+data[28]*weights[28]+data[29]*weights[29]+data[30]*weights[30]+data[31]*weights[31]+data[32]*weights[32]+data[33]*weights[33]+data[34]*weights[34]+data[35]*weights[35]+data[36]*weights[36]+data[37]*weights[37]+data[38]*weights[38]+data[39]*weights[39]+data[40]*weights[40]+data[41]*weights[41]+data[42]*weights[42]+data[43]*weights[43]+data[44]*weights[44]+data[45]*weights[45]+data[46]*weights[46]+data[47]*weights[47]+data[48]*weights[48]+data[49]*weights[49]+data[50]*weights[50]+data[51]*weights[51]+data[52]*weights[52]+data[53]*weights[53]+data[54]*weights[54]+data[55]*weights[55]+data[56]*weights[56]+data[57]*weights[57]+data[58]*weights[58]+data[59]*weights[59]+data[60]*weights[60]+data[61]*weights[61]+data[62]*weights[62]+data[63]*weights[63];
 
 			result <= result_temp[23:8];
 		end
