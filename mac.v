@@ -130,14 +130,17 @@ module mac
 	input [15:0] weight62,
 	input [15:0] weight63,
 	input [15:0] weight64,
-	output reg [15:0] result
+	output wire signed [15:0] result
 );
 
-	reg [31 : 0] result_temp;
-	reg i;
-
-	wire [15 : 0] data[63 : 0];
-	wire [15 : 0] weights[63 : 0];
+	reg signed [31 : 0] resultD,resultQ;
+	reg signed [31:0] temp;
+	integer i;
+	
+	assign result = resultQ[23:8];
+	
+	wire signed [15 : 0] data[63 : 0];
+	wire signed [15 : 0] weights[63 : 0];
 
 	assign data[0] = data1;
 	assign data[1] = data2;
@@ -269,20 +272,22 @@ module mac
 	assign weights[62] =  weight63;
 	assign weights[63] =  weight64;
 
-	always@(posedge clk or posedge reset) begin
+	always@(posedge clk) begin
 		if (reset) begin
-			result_temp <= 0;
-			result <= 0;
+			resultQ <= 0;
 		end	
 		else begin
-			for(i = 0; i < 64; i = i + 1) begin
-				result_temp <=  result_temp + data[i]*weights[i];
-			end
-
-			result <= result_temp[23:8];
+			resultQ <= resultD;
 		end
 	end
-
+	
+	always@(*) begin
+		temp = 32'b0;
+		for(i = 0; i < 64; i = i + 1) begin
+			temp =  temp + data[i]*weights[i];
+		end
+		resultD = resultQ+temp;
+	end
 endmodule
 
 
