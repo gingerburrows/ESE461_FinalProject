@@ -1,0 +1,74 @@
+ 
+****************************************
+Report : register
+Design : Top
+Version: J-2014.09-SP5
+Date   : Mon Dec 10 00:25:54 2018
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+currentState_reg[0]       dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+currentState_reg[1]       dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+inoutAddrQ_reg[0]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+inoutAddrQ_reg[1]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+inoutAddrQ_reg[2]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+inoutAddrQ_reg[3]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+midAddrQ_reg[0]           dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+midAddrQ_reg[1]           dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+roundQ_reg                dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[0]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[1]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[2]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[3]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[4]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[5]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[6]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[7]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[8]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[9]             dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[10]            dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wAddrQ_reg[11]            dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wrCounterQ_reg[0]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wrCounterQ_reg[1]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wrCounterQ_reg[2]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wrCounterQ_reg[3]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wrCounterQ_reg[4]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+wrCounterQ_reg[5]         dp_1            vtvt_tsmc180    174.522598
+                                                                    n
+--------------------------------------------------------------------------------
+Total 27 cells                                            4712.110153
+1

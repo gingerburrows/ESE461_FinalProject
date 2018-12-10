@@ -1,0 +1,614 @@
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : Top
+Version: J-2014.09-SP5
+Date   : Mon Dec 10 00:25:54 2018
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: midAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: midAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  midAddrQ_reg[1]/ck (dp_1)                0.00       0.00 r
+  midAddrQ_reg[1]/q (dp_1)               139.92     139.92 r
+  U38256/op (nand2_1)                     75.61     215.53 f
+  U38257/op (nand2_1)                     45.84     261.36 r
+  midAddrQ_reg[1]/ip (dp_1)                0.00     261.36 r
+  data arrival time                                 261.36
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  midAddrQ_reg[1]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -261.36
+  -----------------------------------------------------------
+  slack (MET)                                       261.36
+
+
+  Startpoint: wrCounterQ_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[5]/ck (dp_1)              0.00       0.00 r
+  wrCounterQ_reg[5]/q (dp_1)             143.90     143.90 r
+  U38208/op (nand2_1)                     76.57     220.47 f
+  U38209/op (nand2_1)                     46.01     266.48 r
+  wrCounterQ_reg[5]/ip (dp_1)              0.00     266.48 r
+  data arrival time                                 266.48
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[5]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -266.48
+  -----------------------------------------------------------
+  slack (MET)                                       266.48
+
+
+  Startpoint: wAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[1]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[1]/q (dp_1)                 170.54     170.54 r
+  U38172/op (nand2_1)                     80.50     251.04 f
+  U38176/op (nand2_1)                     52.82     303.86 r
+  wAddrQ_reg[1]/ip (dp_1)                  0.00     303.86 r
+  data arrival time                                 303.86
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[1]/ck (dp_1)                  0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -303.86
+  -----------------------------------------------------------
+  slack (MET)                                       303.86
+
+
+  Startpoint: wrCounterQ_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[2]/ck (dp_1)              0.00       0.00 r
+  wrCounterQ_reg[2]/q (dp_1)             143.42     143.42 r
+  U38202/op (mux2_1)                     164.49     307.91 r
+  wrCounterQ_reg[2]/ip (dp_1)              0.00     307.91 r
+  data arrival time                                 307.91
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[2]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -307.91
+  -----------------------------------------------------------
+  slack (MET)                                       307.91
+
+
+  Startpoint: wAddrQ_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[3]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[3]/q (dp_1)                 157.22     157.22 r
+  U38184/op (nor2_1)                      84.87     242.09 f
+  U38185/op (nor2_1)                      80.51     322.59 r
+  wAddrQ_reg[3]/ip (dp_1)                  0.00     322.59 r
+  data arrival time                                 322.59
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[3]/ck (dp_1)                  0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -322.59
+  -----------------------------------------------------------
+  slack (MET)                                       322.59
+
+
+  Startpoint: wAddrQ_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[2]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[2]/q (dp_1)                 158.96     158.96 r
+  U38181/op (mux2_1)                     167.62     326.58 r
+  wAddrQ_reg[2]/ip (dp_1)                  0.00     326.58 r
+  data arrival time                                 326.58
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[2]/ck (dp_1)                  0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -326.58
+  -----------------------------------------------------------
+  slack (MET)                                       326.58
+
+
+  Startpoint: wAddrQ_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[11]/ck (dp_1)                 0.00       0.00 r
+  wAddrQ_reg[11]/q (dp_1)                159.57     159.57 r
+  U38200/op (mux2_1)                     167.74     327.31 r
+  wAddrQ_reg[11]/ip (dp_1)                 0.00     327.31 r
+  data arrival time                                 327.31
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[11]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -327.31
+  -----------------------------------------------------------
+  slack (MET)                                       327.31
+
+
+  Startpoint: wrCounterQ_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[2]/ck (dp_1)              0.00       0.00 r
+  wrCounterQ_reg[2]/q (dp_1)             143.42     143.42 r
+  U38202/op (mux2_1)                     184.24     327.66 f
+  wrCounterQ_reg[2]/ip (dp_1)              0.00     327.66 f
+  data arrival time                                 327.66
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[2]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -327.66
+  -----------------------------------------------------------
+  slack (MET)                                       327.66
+
+
+  Startpoint: inoutAddrQ_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[3]/ck (dp_1)              0.00       0.00 r
+  inoutAddrQ_reg[3]/q (dp_1)             142.00     142.00 r
+  U38236/op (nor2_1)                      82.61     224.61 f
+  U38237/op (nand2_1)                     48.62     273.22 r
+  U38240/op (nand2_1)                     61.11     334.33 f
+  inoutAddrQ_reg[3]/ip (dp_1)              0.00     334.33 f
+  data arrival time                                 334.33
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[3]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -334.33
+  -----------------------------------------------------------
+  slack (MET)                                       334.33
+
+
+  Startpoint: wrCounterQ_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[3]/ck (dp_1)              0.00       0.00 r
+  wrCounterQ_reg[3]/q (dp_1)             108.24     108.24 r
+  U38089/op (inv_1)                       65.00     173.24 f
+  U38203/op (nor2_1)                      86.98     260.22 r
+  U38205/op (or2_1)                       75.73     335.95 r
+  wrCounterQ_reg[3]/ip (dp_1)              0.00     335.95 r
+  data arrival time                                 335.95
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[3]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -335.95
+  -----------------------------------------------------------
+  slack (MET)                                       335.95
+
+
+  Startpoint: inoutAddrQ_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[3]/ck (dp_1)              0.00       0.00 r
+  inoutAddrQ_reg[3]/q (dp_1)             142.00     142.00 r
+  U38238/op (inv_1)                       39.21     181.21 f
+  U38239/op (or2_1)                      118.89     300.10 f
+  U38240/op (nand2_1)                     42.64     342.73 r
+  inoutAddrQ_reg[3]/ip (dp_1)              0.00     342.73 r
+  data arrival time                                 342.73
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[3]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -342.73
+  -----------------------------------------------------------
+  slack (MET)                                       342.73
+
+
+  Startpoint: inoutAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00       0.00 r
+  inoutAddrQ_reg[1]/q (dp_1)             173.32     173.32 r
+  U38226/op (mux2_1)                     170.51     343.84 r
+  inoutAddrQ_reg[1]/ip (dp_1)              0.00     343.84 r
+  data arrival time                                 343.84
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -343.84
+  -----------------------------------------------------------
+  slack (MET)                                       343.84
+
+
+  Startpoint: wAddrQ_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[2]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[2]/q (dp_1)                 158.96     158.96 r
+  U38181/op (mux2_1)                     186.31     345.28 f
+  wAddrQ_reg[2]/ip (dp_1)                  0.00     345.28 f
+  data arrival time                                 345.28
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[2]/ck (dp_1)                  0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -345.28
+  -----------------------------------------------------------
+  slack (MET)                                       345.28
+
+
+  Startpoint: wAddrQ_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[11]/ck (dp_1)                 0.00       0.00 r
+  wAddrQ_reg[11]/q (dp_1)                159.57     159.57 r
+  U38200/op (mux2_1)                     186.40     345.97 f
+  wAddrQ_reg[11]/ip (dp_1)                 0.00     345.97 f
+  data arrival time                                 345.97
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[11]/ck (dp_1)                 0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -345.97
+  -----------------------------------------------------------
+  slack (MET)                                       345.97
+
+
+  Startpoint: wrCounterQ_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[5]/ck (dp_1)              0.00       0.00 r
+  wrCounterQ_reg[5]/q (dp_1)             143.90     143.90 r
+  U38206/op (nor2_1)                      84.38     228.28 f
+  U38207/op (nand3_1)                     55.94     284.22 r
+  U38209/op (nand2_1)                     62.48     346.70 f
+  wrCounterQ_reg[5]/ip (dp_1)              0.00     346.70 f
+  data arrival time                                 346.70
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[5]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -346.70
+  -----------------------------------------------------------
+  slack (MET)                                       346.70
+
+
+  Startpoint: wAddrQ_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[9]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[9]/q (dp_1)                 206.41     206.41 r
+  U38194/op (nand2_1)                     88.82     295.22 f
+  U38198/op (nand2_1)                     55.03     350.25 r
+  wAddrQ_reg[9]/ip (dp_1)                  0.00     350.25 r
+  data arrival time                                 350.25
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[9]/ck (dp_1)                  0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -350.25
+  -----------------------------------------------------------
+  slack (MET)                                       350.25
+
+
+  Startpoint: midAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: midAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  midAddrQ_reg[1]/ck (dp_1)                0.00       0.00 r
+  midAddrQ_reg[1]/q (dp_1)               231.34     231.34 f
+  U38256/op (nand2_1)                     63.11     294.45 r
+  U38257/op (nand2_1)                     60.20     354.65 f
+  midAddrQ_reg[1]/ip (dp_1)                0.00     354.65 f
+  data arrival time                                 354.65
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  midAddrQ_reg[1]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -354.65
+  -----------------------------------------------------------
+  slack (MET)                                       354.65
+
+
+  Startpoint: midAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: midAddrQ_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  midAddrQ_reg[0]/ck (dp_1)                0.00       0.00 r
+  midAddrQ_reg[0]/q (dp_1)               141.44     141.44 r
+  U38252/op (inv_1)                       58.99     200.43 f
+  U38253/op (mux2_1)                     157.55     357.98 r
+  midAddrQ_reg[0]/ip (dp_1)                0.00     357.98 r
+  data arrival time                                 357.98
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  midAddrQ_reg[0]/ck (dp_1)                0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -357.98
+  -----------------------------------------------------------
+  slack (MET)                                       357.98
+
+
+  Startpoint: wrCounterQ_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[5]/ck (dp_1)              0.00       0.00 r
+  wrCounterQ_reg[5]/q (dp_1)             235.19     235.19 f
+  U38208/op (nand2_1)                     63.81     299.00 r
+  U38209/op (nand2_1)                     60.23     359.23 f
+  wrCounterQ_reg[5]/ip (dp_1)              0.00     359.23 f
+  data arrival time                                 359.23
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wrCounterQ_reg[5]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -359.23
+  -----------------------------------------------------------
+  slack (MET)                                       359.23
+
+
+  Startpoint: inoutAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00       0.00 r
+  inoutAddrQ_reg[1]/q (dp_1)             173.32     173.32 r
+  U38226/op (mux2_1)                     188.39     361.72 f
+  inoutAddrQ_reg[1]/ip (dp_1)              0.00     361.72 f
+  data arrival time                                 361.72
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                -361.72
+  -----------------------------------------------------------
+  slack (MET)                                       361.72
+
+
+1

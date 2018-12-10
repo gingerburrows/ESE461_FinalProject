@@ -1,0 +1,809 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 20
+Design : Top
+Version: J-2014.09-SP5
+Date   : Mon Dec 10 00:25:54 2018
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38217/op (nor2_1)                     112.72    1255.41 f
+  U38218/op (or2_1)                      127.02    1382.43 f
+  U38220/op (nand2_1)                     66.64    1449.07 r
+  U38221/op (nor2_1)                     174.07    1623.14 f
+  U38223/op (and2_1)                     131.71    1754.85 f
+  U38233/op (or2_1)                      121.34    1876.19 f
+  U38234/op (nand2_1)                     44.49    1920.68 r
+  U38235/op (nor2_1)                      68.47    1989.15 f
+  inoutAddrQ_reg[2]/ip (dp_1)              0.00    1989.15 f
+  data arrival time                                1989.15
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  inoutAddrQ_reg[2]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -146.82   99853.19
+  data required time                              99853.19
+  -----------------------------------------------------------
+  data required time                              99853.19
+  data arrival time                               -1989.15
+  -----------------------------------------------------------
+  slack (MET)                                     97864.04
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38217/op (nor2_1)                     112.72    1255.41 f
+  U38219/op (or2_1)                      128.53    1383.94 f
+  U38220/op (nand2_1)                     61.33    1445.27 r
+  U38221/op (nor2_1)                     174.07    1619.35 f
+  U38223/op (and2_1)                     131.71    1751.06 f
+  U38233/op (or2_1)                      121.34    1872.39 f
+  U38234/op (nand2_1)                     44.49    1916.88 r
+  U38235/op (nor2_1)                      68.47    1985.36 f
+  inoutAddrQ_reg[2]/ip (dp_1)              0.00    1985.36 f
+  data arrival time                                1985.36
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  inoutAddrQ_reg[2]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -146.82   99853.19
+  data required time                              99853.19
+  -----------------------------------------------------------
+  data required time                              99853.19
+  data arrival time                               -1985.36
+  -----------------------------------------------------------
+  slack (MET)                                     97867.83
+
+
+  Startpoint: wAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[1]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[1]/q (dp_1)                 259.32     259.32 f
+  U38070/op (nor4_1)                     233.29     492.61 r
+  U38072/op (nand4_1)                    243.53     736.14 f
+  U38081/op (inv_1)                       66.14     802.28 r
+  U38084/op (nand4_1)                    180.49     982.78 f
+  U38085/op (nand3_1)                    134.63    1117.41 r
+  U38217/op (nor2_1)                     112.72    1230.13 f
+  U38218/op (or2_1)                      127.02    1357.15 f
+  U38220/op (nand2_1)                     66.64    1423.79 r
+  U38221/op (nor2_1)                     174.07    1597.86 f
+  U38223/op (and2_1)                     131.71    1729.57 f
+  U38233/op (or2_1)                      121.34    1850.91 f
+  U38234/op (nand2_1)                     44.49    1895.39 r
+  U38235/op (nor2_1)                      68.47    1963.87 f
+  inoutAddrQ_reg[2]/ip (dp_1)              0.00    1963.87 f
+  data arrival time                                1963.87
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  inoutAddrQ_reg[2]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -146.82   99853.19
+  data required time                              99853.19
+  -----------------------------------------------------------
+  data required time                              99853.19
+  data arrival time                               -1963.87
+  -----------------------------------------------------------
+  slack (MET)                                     97889.32
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38118/op (or2_1)                      183.97    1561.13 f
+  U38126/op (nand2_1)                     85.38    1646.51 r
+  U38139/op (nand2_1)                     98.69    1745.20 f
+  U38140/op (inv_1)                       63.09    1808.29 r
+  U38147/op (or2_1)                       84.64    1892.93 r
+  U38148/op (nand2_1)                     59.12    1952.05 f
+  wAddrQ_reg[7]/ip (dp_1)                  0.00    1952.05 f
+  data arrival time                                1952.05
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[7]/ck (dp_1)                  0.00   100000.00 r
+  library setup time                    -146.27   99853.73
+  data required time                              99853.73
+  -----------------------------------------------------------
+  data required time                              99853.73
+  data arrival time                               -1952.05
+  -----------------------------------------------------------
+  slack (MET)                                     97901.69
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38118/op (or2_1)                      183.97    1561.13 f
+  U38126/op (nand2_1)                     85.38    1646.51 r
+  U38129/op (nand2_1)                     98.24    1744.75 f
+  U38130/op (inv_1)                       62.99    1807.74 r
+  U38136/op (or2_1)                       84.62    1892.35 r
+  U38137/op (nand2_1)                     58.98    1951.33 f
+  wAddrQ_reg[10]/ip (dp_1)                 0.00    1951.33 f
+  data arrival time                                1951.33
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[10]/ck (dp_1)                 0.00   100000.00 r
+  library setup time                    -146.24   99853.77
+  data required time                              99853.77
+  -----------------------------------------------------------
+  data required time                              99853.77
+  data arrival time                               -1951.33
+  -----------------------------------------------------------
+  slack (MET)                                     97902.43
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38118/op (or2_1)                      183.97    1561.13 f
+  U38126/op (nand2_1)                     85.38    1646.51 r
+  U38139/op (nand2_1)                     98.69    1745.20 f
+  U38140/op (inv_1)                       63.09    1808.29 r
+  U38141/op (or2_1)                       83.19    1891.48 r
+  U38148/op (nand2_1)                     58.68    1950.16 f
+  wAddrQ_reg[7]/ip (dp_1)                  0.00    1950.16 f
+  data arrival time                                1950.16
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[7]/ck (dp_1)                  0.00   100000.00 r
+  library setup time                    -146.27   99853.73
+  data required time                              99853.73
+  -----------------------------------------------------------
+  data required time                              99853.73
+  data arrival time                               -1950.16
+  -----------------------------------------------------------
+  slack (MET)                                     97903.58
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38118/op (or2_1)                      183.97    1561.13 f
+  U38126/op (nand2_1)                     85.38    1646.51 r
+  U38129/op (nand2_1)                     98.24    1744.75 f
+  U38130/op (inv_1)                       62.99    1807.74 r
+  U38131/op (or2_1)                       83.17    1890.91 r
+  U38137/op (nand2_1)                     58.56    1949.47 f
+  wAddrQ_reg[10]/ip (dp_1)                 0.00    1949.47 f
+  data arrival time                                1949.47
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[10]/ck (dp_1)                 0.00   100000.00 r
+  library setup time                    -146.24   99853.77
+  data required time                              99853.77
+  -----------------------------------------------------------
+  data required time                              99853.77
+  data arrival time                               -1949.47
+  -----------------------------------------------------------
+  slack (MET)                                     97904.30
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38125/op (or2_1)                      169.06    1546.22 f
+  U38126/op (nand2_1)                     76.88    1623.09 r
+  U38139/op (nand2_1)                     98.69    1721.79 f
+  U38140/op (inv_1)                       63.09    1784.87 r
+  U38147/op (or2_1)                       84.64    1869.51 r
+  U38148/op (nand2_1)                     59.12    1928.63 f
+  wAddrQ_reg[7]/ip (dp_1)                  0.00    1928.63 f
+  data arrival time                                1928.63
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[7]/ck (dp_1)                  0.00   100000.00 r
+  library setup time                    -146.27   99853.73
+  data required time                              99853.73
+  -----------------------------------------------------------
+  data required time                              99853.73
+  data arrival time                               -1928.63
+  -----------------------------------------------------------
+  slack (MET)                                     97925.10
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38125/op (or2_1)                      169.06    1546.22 f
+  U38126/op (nand2_1)                     76.88    1623.09 r
+  U38129/op (nand2_1)                     98.24    1721.33 f
+  U38130/op (inv_1)                       62.99    1784.32 r
+  U38136/op (or2_1)                       84.62    1868.94 r
+  U38137/op (nand2_1)                     58.98    1927.92 f
+  wAddrQ_reg[10]/ip (dp_1)                 0.00    1927.92 f
+  data arrival time                                1927.92
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[10]/ck (dp_1)                 0.00   100000.00 r
+  library setup time                    -146.24   99853.77
+  data required time                              99853.77
+  -----------------------------------------------------------
+  data required time                              99853.77
+  data arrival time                               -1927.92
+  -----------------------------------------------------------
+  slack (MET)                                     97925.85
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38217/op (nor2_1)                     112.72    1255.41 f
+  U38218/op (or2_1)                      127.02    1382.43 f
+  U38220/op (nand2_1)                     66.64    1449.07 r
+  U38221/op (nor2_1)                     174.07    1623.14 f
+  U38224/op (nand2_1)                     72.44    1695.58 r
+  U38225/op (nand2_1)                     72.96    1768.54 f
+  U38226/op (mux2_1)                     130.68    1899.23 f
+  inoutAddrQ_reg[1]/ip (dp_1)              0.00    1899.23 f
+  data arrival time                                1899.23
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -147.53   99852.47
+  data required time                              99852.47
+  -----------------------------------------------------------
+  data required time                              99852.47
+  data arrival time                               -1899.23
+  -----------------------------------------------------------
+  slack (MET)                                     97953.24
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38217/op (nor2_1)                     112.72    1255.41 f
+  U38219/op (or2_1)                      128.53    1383.94 f
+  U38220/op (nand2_1)                     61.33    1445.27 r
+  U38221/op (nor2_1)                     174.07    1619.35 f
+  U38224/op (nand2_1)                     72.44    1691.79 r
+  U38225/op (nand2_1)                     72.96    1764.75 f
+  U38226/op (mux2_1)                     130.68    1895.43 f
+  inoutAddrQ_reg[1]/ip (dp_1)              0.00    1895.43 f
+  data arrival time                                1895.43
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -147.53   99852.47
+  data required time                              99852.47
+  -----------------------------------------------------------
+  data required time                              99852.47
+  data arrival time                               -1895.43
+  -----------------------------------------------------------
+  slack (MET)                                     97957.04
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inoutAddrQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38217/op (nor2_1)                     112.72    1255.41 f
+  U38218/op (or2_1)                      127.02    1382.43 f
+  U38220/op (nand2_1)                     66.64    1449.07 r
+  U38221/op (nor2_1)                     174.07    1623.14 f
+  U38223/op (and2_1)                     131.71    1754.85 f
+  U38226/op (mux2_1)                     138.48    1893.33 f
+  inoutAddrQ_reg[1]/ip (dp_1)              0.00    1893.33 f
+  data arrival time                                1893.33
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  inoutAddrQ_reg[1]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -147.53   99852.47
+  data required time                              99852.47
+  -----------------------------------------------------------
+  data required time                              99852.47
+  data arrival time                               -1893.33
+  -----------------------------------------------------------
+  slack (MET)                                     97959.14
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38118/op (or2_1)                      183.97    1561.13 f
+  U38126/op (nand2_1)                     85.38    1646.51 r
+  U38139/op (nand2_1)                     98.69    1745.20 f
+  U38193/op (mux2_1)                     144.63    1889.83 f
+  wAddrQ_reg[8]/ip (dp_1)                  0.00    1889.83 f
+  data arrival time                                1889.83
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[8]/ck (dp_1)                  0.00   100000.00 r
+  library setup time                    -147.55   99852.45
+  data required time                              99852.45
+  -----------------------------------------------------------
+  data required time                              99852.45
+  data arrival time                               -1889.83
+  -----------------------------------------------------------
+  slack (MET)                                     97962.62
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38086/op (nand2_1)                    176.93    1319.63 f
+  U38087/op (nor2_1)                     175.51    1495.14 r
+  U38102/op (or2_1)                      100.58    1595.72 r
+  U38103/op (nand2_1)                     86.48    1682.20 f
+  U38104/op (inv_1)                       60.33    1742.53 r
+  U38107/op (or2_1)                       84.11    1826.64 r
+  U38108/op (nand2_1)                     58.89    1885.53 f
+  wrCounterQ_reg[1]/ip (dp_1)              0.00    1885.53 f
+  data arrival time                                1885.53
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wrCounterQ_reg[1]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -146.22   99853.78
+  data required time                              99853.78
+  -----------------------------------------------------------
+  data required time                              99853.78
+  data arrival time                               -1885.53
+  -----------------------------------------------------------
+  slack (MET)                                     97968.25
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38086/op (nand2_1)                    176.93    1319.63 f
+  U38087/op (nor2_1)                     175.51    1495.14 r
+  U38102/op (or2_1)                      100.58    1595.72 r
+  U38103/op (nand2_1)                     86.48    1682.20 f
+  U38104/op (inv_1)                       60.33    1742.53 r
+  U38105/op (or2_1)                       82.67    1825.20 r
+  U38108/op (nand2_1)                     58.54    1883.74 f
+  wrCounterQ_reg[1]/ip (dp_1)              0.00    1883.74 f
+  data arrival time                                1883.74
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wrCounterQ_reg[1]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -146.22   99853.78
+  data required time                              99853.78
+  -----------------------------------------------------------
+  data required time                              99853.78
+  data arrival time                               -1883.74
+  -----------------------------------------------------------
+  slack (MET)                                     97970.04
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wrCounterQ_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38086/op (nand2_1)                    176.93    1319.63 f
+  U38087/op (nor2_1)                     175.51    1495.14 r
+  U38099/op (or2_1)                       99.13    1594.27 r
+  U38103/op (nand2_1)                     86.09    1680.36 f
+  U38104/op (inv_1)                       60.33    1740.69 r
+  U38107/op (or2_1)                       84.11    1824.80 r
+  U38108/op (nand2_1)                     58.89    1883.70 f
+  wrCounterQ_reg[1]/ip (dp_1)              0.00    1883.70 f
+  data arrival time                                1883.70
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wrCounterQ_reg[1]/ck (dp_1)              0.00   100000.00 r
+  library setup time                    -146.22   99853.78
+  data required time                              99853.78
+  -----------------------------------------------------------
+  data required time                              99853.78
+  data arrival time                               -1883.70
+  -----------------------------------------------------------
+  slack (MET)                                     97970.09
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38118/op (or2_1)                      183.97    1561.13 f
+  U38126/op (nand2_1)                     85.38    1646.51 r
+  U38129/op (nand2_1)                     98.24    1744.75 f
+  U38200/op (mux2_1)                     135.50    1880.25 f
+  wAddrQ_reg[11]/ip (dp_1)                 0.00    1880.25 f
+  data arrival time                                1880.25
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[11]/ck (dp_1)                 0.00   100000.00 r
+  library setup time                    -147.68   99852.32
+  data required time                              99852.32
+  -----------------------------------------------------------
+  data required time                              99852.32
+  data arrival time                               -1880.25
+  -----------------------------------------------------------
+  slack (MET)                                     97972.07
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38125/op (or2_1)                      169.06    1546.22 f
+  U38126/op (nand2_1)                     76.88    1623.09 r
+  U38139/op (nand2_1)                     98.69    1721.79 f
+  U38193/op (mux2_1)                     144.63    1866.41 f
+  wAddrQ_reg[8]/ip (dp_1)                  0.00    1866.41 f
+  data arrival time                                1866.41
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[8]/ck (dp_1)                  0.00   100000.00 r
+  library setup time                    -147.55   99852.45
+  data required time                              99852.45
+  -----------------------------------------------------------
+  data required time                              99852.45
+  data arrival time                               -1866.41
+  -----------------------------------------------------------
+  slack (MET)                                     97986.04
+
+
+  Startpoint: wAddrQ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[1]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[1]/q (dp_1)                 259.32     259.32 f
+  U38070/op (nor4_1)                     233.29     492.61 r
+  U38072/op (nand4_1)                    243.53     736.14 f
+  U38081/op (inv_1)                       66.14     802.28 r
+  U38084/op (nand4_1)                    180.49     982.78 f
+  U38085/op (nand3_1)                    134.63    1117.41 r
+  U38117/op (nand2_1)                    234.46    1351.87 f
+  U38118/op (or2_1)                      183.97    1535.84 f
+  U38126/op (nand2_1)                     85.38    1621.23 r
+  U38139/op (nand2_1)                     98.69    1719.92 f
+  U38193/op (mux2_1)                     144.63    1864.55 f
+  wAddrQ_reg[8]/ip (dp_1)                  0.00    1864.55 f
+  data arrival time                                1864.55
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[8]/ck (dp_1)                  0.00   100000.00 r
+  library setup time                    -147.55   99852.45
+  data required time                              99852.45
+  -----------------------------------------------------------
+  data required time                              99852.45
+  data arrival time                               -1864.55
+  -----------------------------------------------------------
+  slack (MET)                                     97987.91
+
+
+  Startpoint: wAddrQ_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: wAddrQ_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  wAddrQ_reg[0]/ck (dp_1)                  0.00       0.00 r
+  wAddrQ_reg[0]/q (dp_1)                 278.07     278.07 f
+  U38070/op (nor4_1)                     239.83     517.89 r
+  U38072/op (nand4_1)                    243.53     761.43 f
+  U38081/op (inv_1)                       66.14     827.57 r
+  U38084/op (nand4_1)                    180.49    1008.06 f
+  U38085/op (nand3_1)                    134.63    1142.69 r
+  U38117/op (nand2_1)                    234.46    1377.16 f
+  U38125/op (or2_1)                      169.06    1546.22 f
+  U38126/op (nand2_1)                     76.88    1623.09 r
+  U38129/op (nand2_1)                     98.24    1721.33 f
+  U38200/op (mux2_1)                     135.50    1856.83 f
+  wAddrQ_reg[11]/ip (dp_1)                 0.00    1856.83 f
+  data arrival time                                1856.83
+
+  clock clk (rise edge)                100000.00  100000.00
+  clock network delay (ideal)              0.00   100000.00
+  wAddrQ_reg[11]/ck (dp_1)                 0.00   100000.00 r
+  library setup time                    -147.68   99852.32
+  data required time                              99852.32
+  -----------------------------------------------------------
+  data required time                              99852.32
+  data arrival time                               -1856.83
+  -----------------------------------------------------------
+  slack (MET)                                     97995.49
+
+
+1

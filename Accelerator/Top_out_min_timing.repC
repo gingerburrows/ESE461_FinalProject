@@ -1,0 +1,69 @@
+Warning: Worst timing paths might not be returned. (TIM-104)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -greater_path 0.00
+        -max_paths 1000000
+Design : Top
+Version: J-2014.09-SP5
+Date   : Mon Dec 10 00:25:54 2018
+****************************************
+
+Operating Conditions: nom_pvt   Library: vtvt_tsmc180
+Wire Load Model Mode: top
+
+  Startpoint: currentState_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Done (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  currentState_reg[1]/ck (dp_1)            0.00       0.00 r
+  currentState_reg[1]/q (dp_1)           126.37     126.37 r
+  U38157/op (and2_1)                     282.03     408.40 r
+  Done (out)                               0.00     408.40 r
+  data arrival time                                 408.40
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: currentState_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Done (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  currentState_reg[0]/ck (dp_1)            0.00       0.00 r
+  currentState_reg[0]/q (dp_1)           142.05     142.05 r
+  U38157/op (and2_1)                     286.36     428.41 r
+  Done (out)                               0.00     428.41 r
+  data arrival time                                 428.41
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: currentState_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Done (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  currentState_reg[1]/ck (dp_1)            0.00       0.00 r
+  currentState_reg[1]/q (dp_1)           218.22     218.22 f
+  U38157/op (and2_1)                     268.80     487.02 f
+  Done (out)                               0.00     487.02 f
+  data arrival time                                 487.02
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
