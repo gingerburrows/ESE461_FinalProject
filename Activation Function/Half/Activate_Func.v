@@ -2,7 +2,7 @@ module activation(in,out);
 	input wire signed [15:0] in; //Input X value
 	output reg [15:0] out;
 	
-	wire [5:0] decoded_addr;
+	wire [15:0] decoded_addr;
 	wire [15:0] rom_out;
 	
 	rom sigmoid(
